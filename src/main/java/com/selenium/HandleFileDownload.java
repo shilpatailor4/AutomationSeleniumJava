@@ -21,19 +21,22 @@ public class HandleFileDownload {
 		
 		ChromeOptions option = new ChromeOptions();
 		option.setExperimentalOption("prefs", chromPerfs);
+	    option.addArguments("--start-maximized");
 		
 		WebDriver driver = new ChromeDriver(option);
 		
 		driver.get("https://demo.automationtesting.in/FileDownload.html");
 		driver.findElement(By.xpath("//a[@type='button']")).click();
 		
-		//Verify the downloaded file is present in the downloaded folder or not
+		//Verify the downloaded file is present in the downloaded folder or not using File class
 		File file = new File(downloadFilePath);
 		if(file.exists()) {
 			System.out.println("File downloaded successfully.");
 		}else {
 			System.out.println("File is not downloaded.");
 		}
+		
+		driver.close();
 
 	}
 
