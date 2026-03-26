@@ -21,7 +21,7 @@ public class RemoveDuplicatesChar {
 		
 		return result.toString();
 	}
-
+		
 	public static void main(String[] args) {
 		
 		String input = "programming";
