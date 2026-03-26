@@ -23,6 +23,18 @@ public class OcurranceOfWords {
 		}
 		
 		System.out.println(maps);
+		
+		//If we found only non reat words in given string then use it
+		for(Map.Entry<String, Integer> entry : maps.entrySet()){
+	          if(entry.getValue() == 1){
+	              System.out.println(entry.getKey() + "=" + entry.getValue());
+	          }
+	      }
 	}
 
 }
+
+//{I=1, love=1, selenium=2, java=2, and=1}
+//I=1
+//love=1
+//and=1

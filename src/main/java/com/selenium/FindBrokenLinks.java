@@ -16,12 +16,12 @@ public class FindBrokenLinks {
 		WebDriver driver = new ChromeDriver();
 		driver.get("http://www.deadlinkcity.com/");
 		
+		//Set the broken link attibute to increase every time
+		int noOfBrokenLinks=0;
+		
 		//Find all links
 		List<WebElement> allLinks = driver.findElements(By.tagName("a"));
 		System.out.println("All links on the page: " + allLinks.size());
-		
-		//Set the broken link attibute to increase every time
-		int noOfBrokenLinks=0;
 		
 		//find the 'href' attribute and check the links if not href then not possible to check broken link
 		for(WebElement link : allLinks) {
@@ -36,11 +36,13 @@ public class FindBrokenLinks {
 				HttpURLConnection conn = (HttpURLConnection) urlLink.openConnection();
 				conn.connect();
 				
-				if(conn.getResponseCode() <= 400) {
-					System.out.println("Broken Links ==> " + hrefAttValue);
+				int responseCode = conn.getResponseCode();
+				
+				if(responseCode >= 400) {
+					System.out.println("Broken Links ==> " + hrefAttValue + " ==> Response Code:: " + responseCode);
 					noOfBrokenLinks++;
 				}else {
-					System.out.println("Not Broken Links ==> " + hrefAttValue);
+					System.out.println("Not Broken Links ==> " + hrefAttValue + " ==> Response Code:: " + responseCode);
 				}
 			}catch(Exception e) {
 				

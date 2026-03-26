@@ -25,3 +25,7 @@ public class LargestSmallestNumbers {
 	}
 
 }
+
+
+//Smallest Num: 10
+//Largest Num: 90

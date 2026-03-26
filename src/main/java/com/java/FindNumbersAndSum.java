@@ -26,3 +26,7 @@ public class FindNumbersAndSum {
 	}
 
 }
+
+
+//Numbers: 1 2 3 
+//Sum of all numbers: 6
