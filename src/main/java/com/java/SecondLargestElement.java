@@ -11,20 +11,27 @@ public class SecondLargestElement {
 		int smallest=arr[0];
 		
 		for(int i=0; i<arr.length; i++) {
+			//largest
 			if(arr[i] > largest) {
 				largest = arr[i];
 			}
 			
+			//smallest
 			if(arr[i] < smallest) {
 				smallest = arr[i];
 			}
-		}
-		
-		for(int i=0; i<arr.length; i++) {
+			
+			//second largest
 			if(arr[i] > secondLargest && arr[i] < largest) {
 				secondLargest = arr[i];
 			}
-		}		
+		}
+		
+//		for(int i=0; i<arr.length; i++) {
+//			if(arr[i] > secondLargest && arr[i] < largest) {
+//				secondLargest = arr[i];
+//			}
+//		}		
 		System.out.println("Largest:: " + largest);
 		System.out.println("Second Largest:: " + secondLargest);
 		System.out.println("Smallest:: " + smallest);
