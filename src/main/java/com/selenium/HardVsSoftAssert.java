@@ -10,11 +10,11 @@ public class HardVsSoftAssert {
 
 	public static void main(String[] args) {
 		
-		/*Assert: implemented Hard Assertion and if test is failed then immeditaly test execution will stop and 
+		/*Assert: implemented Hard Assertion and if test is failed then immedietly test execution will stop and 
 		 * next line of code will skipped 
 		 * 
 		 * 
-		 * Verify implemented Soft assertion and if test fauiled then record the failed tests 
+		 * Verify: implemented Soft assertion and if test failed then record the failed tests 
 		 *  and continue the remaining test execution. And of all lines will add .assertAll();
 */
 		
